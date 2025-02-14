@@ -36,15 +36,8 @@
          <div hidden id="zone" class="pt-6">
             <x-input-label for="Acpn" :value="__('LGA/Acpn Zones')" />
                 <div class="mt-4">
-                <select x-data="{ lgas: {{$lgas}} }" id="select-LGA/ACPN zone" placeholder="Select LGA/ACPN Zone..." autocomplete="off" >
+                <select id="select-lga" placeholder="Select LGA/ACPN Zone..." autocomplete="off" >
                     <option value="">Select LGA/ACPN Zone...</option>
-{{--                    <option value="4">Lagos</option>--}}
-{{--                    <option value="1">Oyo</option>--}}
-{{--                    <option value="3">Ogun</option>--}}
-                    <template x-for="lga in lgas">
-
-                        <option x-text="lga" :value="lga">Lagos</option>
-                    </template>
                 </select>
                 </div>
 
