@@ -20,13 +20,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::controller(PharmacyController::class)->group(function () {
-        Route::get('/pharmacy', 'create')->name('pharmacy');
+        Route::get('/pharmacy/create', 'create')->name('pharmacy.create');
+        Route::get('/pharmacy', 'index')->name('pharmacy.index');
         Route::post('/pharmacy', 'store')->name('pharmacy.store');
+        Route::get('/pharmacy/{pharmacy}', 'show')->name('pharmacy.show');
+        Route::patch('/pharmacy/{pharmacy}', 'update')->name('pharmacy.update');
     });
 });
 
-Route::get('/external-data', function () {
-  include resource_path('lgas.php');
-   return response()->json($lga);
-});
+
 require __DIR__.'/auth.php';

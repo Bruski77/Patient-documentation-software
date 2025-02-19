@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pharmacies', function (Blueprint $table) {
-            $table->ulid('id')->primary();
-            $table->string('name');
-            $table->string('lga');
-            $table->string('state');
-        //    $table->integer()'employees');
+        Schema::create('pharmacy_user', function (Blueprint $table) {
+            $table->ulid('pharmacy_id');
+            $table->ulid('user_id');
+            $table->tinyInteger('role');
             $table->timestamps();
+
+            $table->primary(['pharmacy_id', 'user_id']);
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pharmacies');
+        Schema::dropIfExists('pharmacy_user');
     }
 };
