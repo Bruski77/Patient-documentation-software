@@ -39,8 +39,6 @@
 
                             <div class="flex items-center gap-4">
                                 <x-primary-button>Save</x-primary-button>
-
-
                             </div>
                         </form>
                     </section>
@@ -85,7 +83,7 @@
                                     <tr>
 
                                         <td>{{$user->name}}</td>
-                                        <td>{{$user->pivot->role}}</td>
+                                        <td>{{$user->pivot->role->name}}</td>
                                         <td>{{$user->pivot->created_at}}</td>
                                     </tr>
                                 @endforeach

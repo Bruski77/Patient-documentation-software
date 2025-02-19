@@ -15,6 +15,6 @@ class Pharmacy extends Model
 
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class)->withPivot(['role', 'created_at'])->using(PharmacyUser::class);
+        return $this->belongsToMany(User::class)->using(PharmacyUser::class)->withPivot(['role', 'created_at']);
     }
 }
